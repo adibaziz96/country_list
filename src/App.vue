@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <topnavbar/>
     <router-view/>
   </div>
 </template>
@@ -31,3 +32,11 @@ img{
   object-fit: cover;
 }
 </style>
+<script>
+import topnavbar from './views/topnavbar.vue'
+  export default{
+    components:{
+      topnavbar // register component
+    }
+  }
+</script>

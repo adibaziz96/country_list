@@ -17,7 +17,7 @@ const router =  new Router({
       component: Customers
     },
     {
-      path: '/customerdetails/:id',
+      path: '/customerdetails/:name',
       name: 'customerdetails',
       component: CustomerDetails
     }
