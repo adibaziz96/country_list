@@ -31,9 +31,15 @@ img{
   height: 200px;
   object-fit: cover;
 }
+
+img.image{
+  width: 400px; /* You can set the dimensions to whatever you want */
+  height: 300px;
+  object-fit: cover;
+}
 </style>
 <script>
-import topnavbar from './views/topnavbar.vue'
+import topnavbar from './views/Topnavbar.vue'
   export default{
     components:{
       topnavbar // register component

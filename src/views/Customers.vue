@@ -10,34 +10,40 @@
 
 <template>
 
-<div class="home">
+<div class="home bg-light">
     <div class="row">
-        <div class="col">
-            <div class="form-group">
+        <div class="col mt-5 ml-3">
+            <div class="form-group col-sm-8">
                 <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text bg-white"><i class="fas fa-search"></i> </div>
+                    </div>
+                    
                     <input type="text" class="form-control" placeholder="Search for a country" @keyup="searchCountry" v-model="country">
                 </div>
             </div>
         </div>
-        <div class="col">
-            <select class="custom-select mr-sm-2" @change="filterRegion($event)">
-                <option value="">Filter by Region</option>
-                <option v-for="region in uniqueRegion" v-bind:key="region.value">
-                    {{region}}
-                </option>
-            </select>
+        <div class="col mt-5">
+            <div class="form-group col-sm-4 float-right">
+                <select class="form-control custom-select mr-sm-2" @change="filterRegion($event)">
+                    <option value="">Filter by Region</option>
+                    <option v-for="region in uniqueRegion" v-bind:key="region.value">
+                        {{region}}
+                    </option>
+                </select>
+            </div>
         </div>
     </div>
 
     <div class="row row-cols-2">
-        <div class="card text-left mt-5 ml-5" style="width: 18rem;" v-for="country in countryList" :key="country.name">
+        <div class="card shadow-sm text-left mt-5 ml-5" style="width: 18rem;" v-for="country in countryList" :key="country.name">
             <a v-on:click="goToDetailsPage(country.alpha3Code.toLowerCase())">
                 <img :src="country.flag" class="card-img-top">
                 <div class="card-body" v-on:click="setSelectedcountry(country.name)">
                     <h5 class="card-title">{{country.name}}</h5>
-                    <p class="card-text">Population: {{country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</p>
-                    <p class="card-text">Region: {{country.region}}</p>
-                    <p class="card-text">Capital: {{country.capital}}</p>
+                    <p class="card-text"><b>Population:</b> {{country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</p>
+                    <p class="card-text"><b>Region:</b> {{country.region}}</p>
+                    <p class="card-text"><b>Capital:</b> {{country.capital}}</p>
                 </div>
             </a>
         </div>
