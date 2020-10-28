@@ -10,7 +10,7 @@
 
 <template>
 
-<div class="home bg-light">
+<div class="home">
     <div class="row">
         <div class="col mt-5 ml-3">
             <div class="form-group col-sm-8">

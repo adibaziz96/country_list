@@ -123,7 +123,7 @@
                             <div class="row">
                                 <b>Border Countries:</b>
                                 <div class="col">
-                                    <p class="badge badge-light" v-for="border in countryDetails.borders" :key="border"><a v-on:click="goToDetailsPage(border.toLowerCase())">{{border}}</a></p>
+                                    <p class="btn btn-secondary ml-1" v-for="border in countryDetails.borders" :key="border"><a v-on:click="goToDetailsPage(border.toLowerCase())">{{border}}</a></p>
                                 </div>
                             </div>
                         </td>
