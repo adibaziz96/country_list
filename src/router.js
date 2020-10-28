@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Customers from './views/Customers.vue'
-import CustomerDetails from './views/CustomerDetails.vue'
+import Country from './views/Country.vue'
+import CountryDetail from './views/CountryDetail.vue'
+import BorderDetail from './views/BorderDetail.vue'
 
 Vue.use(Router)
 
@@ -9,17 +10,22 @@ const router =  new Router({
   routes: [
     {
       path: '/',
-      redirect: '/customers'
+      redirect: '/country'
     },
     {
-      path: '/customers',
-      name: 'customers',
-      component: Customers
+      path: '/country',
+      name: 'country',
+      component: Country
     },
     {
-      path: '/customerdetails/:name',
-      name: 'customerdetails',
-      component: CustomerDetails
+      path: '/countrydetail/:name',
+      name: 'countrydetail',
+      component: CountryDetail
+    },
+    {
+      path: '/borderdetail/:name',
+      name: 'borderdetail',
+      component: BorderDetail
     }
   ]
 })

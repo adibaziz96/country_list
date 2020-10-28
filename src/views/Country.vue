@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div class="row row-cols-2 ml-4" style="justify-content:center;">
+    <div class="row row-cols-2" style="justify-content:center;">
         <div class="card shadow-sm text-left mt-5 " style="width:18rem;margin-right: 20px;" v-for="country in countryList" :key="country.name">
             <a v-on:click="goToDetailsPage(country.alpha3Code.toLowerCase())">
                 <img :src="country.flag" class="card-img-top">
@@ -48,7 +48,7 @@
             </a>
         </div>
     </div>
-    <Display v-if="selectedCustomer!=''" :selectedCustomer="selectedCustomer" />
+    <Display v-if="selectedCountry!=''" :selectedCountry="selectedCountry" />
 </div>
 
 </template>
@@ -58,7 +58,7 @@
 import Display from '@/components/Display.vue'
 import axios from 'axios'
 export default {
-    name: 'customers',
+    name: 'country',
     mounted() {
         axios({
             method: "GET",
@@ -79,7 +79,7 @@ export default {
             countryList: [],
             regionList: [],
             region: "",
-            selectedCustomer: ""
+            selectedCountry: ""
         }
     },
     computed: {
@@ -95,11 +95,11 @@ export default {
         Display
     },
     methods: {
-        setSelectedCustomer: function(name) {
-            this.selectedCustomer = name;
+        setSelectedCountry: function(name) {
+            this.selectedCountry = name;
         },
         goToDetailsPage: function(name) {
-            this.$router.push("/customerdetails/"+name);
+            this.$router.push("/countrydetail/"+name);
         },
         filterRegion: function filterRegion(event) {
             this.region = event.target.value;
@@ -110,7 +110,6 @@ export default {
                 }).then(response => {
                     this.countryList = response.data;
                 }, error => {
-                    // eslint-disable-next-line
                     console.error(error);
                 });
             }else{
@@ -120,7 +119,6 @@ export default {
                 }).then(response => {
                     this.countryList = response.data;
                 }, error => {
-                    // eslint-disable-next-line
                     console.error(error);
                 });
             }
@@ -134,7 +132,6 @@ export default {
                 }).then(response => {
                     this.countryList = response.data;
                 }, error => {
-                    // eslint-disable-next-line
                     console.error(error);
                 });
             }else{
@@ -144,7 +141,6 @@ export default {
                 }).then(response => {
                     this.countryList = response.data;
                 }, error => {
-                    // eslint-disable-next-line
                     console.error(error);
                 });
             }

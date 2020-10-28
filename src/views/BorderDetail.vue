@@ -18,7 +18,7 @@
         <div class="col mt-5 ml-3">
             <div class="form-group col-sm-12">
                 <div class="input-group mb-3">
-                    <a v-on:click="goToMainPage()" class="col-sm-1 btn btn-light"><i class="fas fa-arrow-left"></i> Back</a>
+                    <a v-on:click="goToMainPage()" class="col-sm-1 btn btn-outline-secondary"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
         </div>
 
         
-        <div class="col-md-7 mt-5 text-left">
+        <div class="col-md-5 mt-5 text-left">
             <table class="table table-borderless" width="100%">
                 <thead>
                     <tr>
@@ -119,15 +119,14 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td>
+                        <td colspan="2">
                             <div class="row">
                                 <b>Border Countries:</b>
                                 <div class="col">
-                                    <p class="badge badge-light" v-for="border in countryDetails.borders" :key="border">{{border}}</p>
+                                    <p class="badge badge-light" v-for="border in countryDetails.borders" :key="border"><a v-on:click="goToDetailsPage(border.toLowerCase())">{{border}}</a></p>
                                 </div>
                             </div>
                         </td>
-                        <td></td>
                     </tr>
                 </tfoot>
             </table>
@@ -162,9 +161,11 @@ export default {
     },
     methods: {
         goToMainPage: function() {
-            this.$router.push("/customers");
-        }
+            this.$router.push("/country");
+        },
+        goToDetailsPage: function(name) {
+            this.$router.push("/countrydetail/"+name);
+        },
     }
 }
-
 </script>
