@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div class="row row-cols-2" style="justify-content:center;">
+    <div class="row row-cols-12" style="justify-content:center;">
         <div class="card shadow-sm text-left mt-5 " style="width:18rem;margin-right: 20px;" v-for="country in countryList" :key="country.name">
             <a v-on:click="goToDetailsPage(country.alpha3Code.toLowerCase())">
                 <img :src="country.flag" class="card-img-top">
