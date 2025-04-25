@@ -1,6 +1,6 @@
-# List of Country (runcloud.io)
+# List of Countries
 
-The Application is deployed in
+This Application is deployed from
 ### https://github.com/adibaziz96/country_list
 
 ## Prerequisites
@@ -9,13 +9,6 @@ The Application is deployed in
 
 Refer https://nodejs.org/en/ to install NodeJS
 
-### Install Vue Cli [![Generic badge](https://img.shields.io/badge/Prerequisite-VueCli-blue.svg)](https://cli.vuejs.org/guide/)
-
-Install Vue Cli Node Package Globally using the following Command.
-
-```bash
-npm install -g @vue/cli
-```
 ## Cloning and Running the Application
 
 Clone the application to local
@@ -26,8 +19,8 @@ npm install
 ```
 Run the following command to run the application
 ```
-npm run serve
+npm run dev
 ```
 The Application runs on **localhost:8080**
 
-Click this link for live preview --- https://vue-app-68836.web.app
+Click this link for live preview --- [Live Preview](https://country-list-mu.vercel.app/)
