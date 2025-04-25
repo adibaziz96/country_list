@@ -62,7 +62,7 @@ export default {
     mounted() {
         axios({
             method: "GET",
-            url: "https://restcountries.eu/rest/v2/all"
+            url: "https://restcountries.com/v3.1/all"
         }).then(response => {
             this.countryList = response.data;
             for (let i = 0; i < response.data.length; i++) {
@@ -106,7 +106,7 @@ export default {
             if(this.region != ''){
                 axios({
                     method: "GET",
-                    url: "https://restcountries.eu/rest/v2/region/"+this.region
+                    url: "https://restcountries.com/v3.1/region/"+this.region
                 }).then(response => {
                     this.countryList = response.data;
                 }, error => {
@@ -115,7 +115,7 @@ export default {
             }else{
                 axios({
                     method: "GET",
-                    url: "https://restcountries.eu/rest/v2/all"
+                    url: "https://restcountries.com/v3.1/all"
                 }).then(response => {
                     this.countryList = response.data;
                 }, error => {
@@ -128,7 +128,7 @@ export default {
             if(this.country != ''){
                 axios({
                     method: "GET",
-                    url: "https://restcountries.eu/rest/v2/name/"+this.country
+                    url: "https://restcountries.com/v3.1/name/"+this.country
                 }).then(response => {
                     this.countryList = response.data;
                 }, error => {
@@ -137,7 +137,7 @@ export default {
             }else{
                 axios({
                     method: "GET",
-                    url: "https://restcountries.eu/rest/v2/all"
+                    url: "https://restcountries.com/v3.1/all"
                 }).then(response => {
                     this.countryList = response.data;
                 }, error => {

@@ -145,7 +145,7 @@ export default {
     mounted() {
         axios({
             method: "GET",
-            url: "https://restcountries.eu/rest/v2/alpha/"+this.$route.params.name
+            url: "https://restcountries.com/v3.1/alpha/"+this.$route.params.name
         }).then(response => {
             this.countryDetails = response.data;
             console.log(response.data);
