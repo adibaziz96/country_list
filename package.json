@@ -16,12 +16,14 @@
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.27.0",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-unit-mocha": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
     "@vue/test-utils": "^1.3.0",
     "chai": "^4.4.1",
+    "eslint-plugin-vue": "^10.0.0",
     "sass": "^1.69.5",
     "sass-loader": "^10.4.1",
     "vue-template-compiler": "^2.7.16"
@@ -29,15 +31,19 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "browser": true
     },
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@babel/eslint-parser",
+      "requireConfigFile": false
+    },
+    "rules": {
+      "vue/multi-word-component-names": "off"
     }
   },
   "browserslist": [
