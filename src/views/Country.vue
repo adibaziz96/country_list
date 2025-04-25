@@ -38,9 +38,9 @@
     <div class="row row-cols-12" style="justify-content:center;">
         <div class="card shadow-sm text-left mt-5 " style="width:18rem;margin-right: 20px;" v-for="country in countryList" :key="country.name">
             <a v-on:click="goToDetailsPage(country.alpha3Code.toLowerCase())">
-                <img :src="country.flag" class="card-img-top">
+                <img :src="country.flags.svg" class="card-img-top">
                 <div class="card-body" v-on:click="setSelectedcountry(country.name)">
-                    <h5 class="card-title">{{country.name}}</h5>
+                    <h5 class="card-title">{{country.name.official}}</h5>
                     <p class="card-text"><b>Population:</b> {{country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</p>
                     <p class="card-text"><b>Region:</b> {{country.region}}</p>
                     <p class="card-text"><b>Capital:</b> {{country.capital}}</p>
@@ -68,7 +68,6 @@ export default {
             for (let i = 0; i < response.data.length; i++) {
                 this.regionList.push(response.data[i].region);
             }
-            console.log(response.data);
         }, error => {
             // eslint-disable-next-line
             console.error(error);
@@ -76,6 +75,7 @@ export default {
     },
     data() {
         return {
+            country: "",
             countryList: [],
             regionList: [],
             region: "",
